@@ -1,0 +1,190 @@
+*
+{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     
+}
+/*
+ Etiqueta BODY para darle estilo a la pagina
+*/
+body {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: -webkit-radial-gradient();
+    min-height: 100vh;
+    background-color:  #1E1A34;
+    
+}
+/*
+Etiqueta "BOX" es en la que se encuentra todo el contenido del LOGIN
+*/
+.box
+{
+    align-content: center;
+    position: relative;
+    width: 380px;
+    height: 420px;
+    border-radius: 8px;
+    overflow: hidden;
+    
+}
+/*
+Etiqueta "BOX::before" es para darle animacion a los bordes del LOGIN
+*/
+.box::before
+{
+     content: " ";
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 380px;
+     height: 420px;
+     background: linear-gradient(0deg,transparent,#ff00aa,#00ff22);
+     transform-origin: bottom right;
+     animation: animate 6s linear infinite;
+}
+/*
+Etiqueta "BOX::after" tambien es usada para darle animacion a los bordes del LOGIN
+*/
+.box::after
+{
+     content: " ";
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 380px;
+     height: 420px;
+     background: linear-gradient(0deg,transparent,#1a0aff,#00ff2a);
+     transform-origin: bottom right;
+     animation: animate 6s linear infinite;
+     animation-delay: -3s;
+}
+/*
+este codigo contempla las etiquetas anteriores para la animacion de colores en los bordes
+*/
+@keyframes animate
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+
+    }
+
+}
+/*
+ Etiqueta "FORM" es unsada para darle forma al cuadro del LOGIN en donde se encuentra todo el contenido
+*/
+.form
+{
+    position: absolute;
+    inset: 3px;
+    border-radius: 8px;
+    background: #ffffff;
+    z-index: 10;
+    padding: 55px 60px;
+    display: flex;
+    flex-direction: column;
+}
+/*
+ Etiqueta "FORM H2" es utilizada para cambiar tamaño,color y tipo de letra del contenido de la etiqueta "H2"
+*/
+.form h2
+{
+    color: rgb(116, 112, 112);
+    font-weight: 450;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.2em;
+}
+/*
+ Etiqueta "FORM-GROUP" es donde esta el cuadro de texto que dice "USUARIO" y "CONTRASEÑA" y se esta usando para cambiar el tamaño y posicion
+*/
+.form-group
+{   
+    position: relative;
+    width: 30px;
+    margin-top: 35px;
+    
+}
+/*
+ Etiqueta "FORM-GROUP INPUT" es donde esta el cuadro de texto que dice "USUARIO" y "CONTRASEÑA" y se esta usando para cambiar el tipo de letra,
+  color, dimension y cambiar o quitar los bordes del cuadro de textos donde va usuario y contraseña 
+*/
+.form-group input
+{
+    text-align: center;
+    align-content: center;
+    position: relative;
+    padding: 25px 40px 10px;
+    background: rgb(212, 225, 236);
+    border-color: transparent;
+    border-radius: 8px;
+    line-height: 1.3333333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*
+ Etiqueta "FORM IMPUT" es para darle forma aL boton de "INGRESAR"
+ */
+.form imput
+{
+    padding: 25px 2px 10px;
+    display: grid;
+}
+/*
+ Etiqueta "FORM-BUTTON" es para darle color al texto que esta en el boton de INGRESAR y tamnbien es usada para cambiar lo quitar 
+ el bode del boton y modificar el tipo de letra 
+ */
+.form button
+{
+    color: #ffffff;
+    background: #3C8DBC;
+    padding: 10px 16px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+    border-color: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*
+ Etiqueta "LINKS A" es las que nos dices "Olvide mi contraseña" y la usamos para cambiarle el tipo de letra y el color del texto
+ */
+.links a
+{
+    color: rgb(116, 112, 112);
+    text-decoration: none;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+/*
+ Estas etiquetas se usan para darle un cambio a la pagina cuando se modifica el tamano de pixeles de la pantalla
+ */
+
+.form-control
+{
+    align-content: left;
+}
+@media screen and (max-width:800px)
+{
+    .box
+    {
+        flex-direction: column;
+        height: 500;
+        justify-content: space-evenly;
+    }
+    .form h2
+    {
+        font-size: 30px;
+        
+    }
+}
